@@ -10,7 +10,8 @@
     "mongodb": "^3.6.3",
     "next": "latest",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.14.0",
+    "react-native": "^0.63.4"
   },
   "license": "MIT"
 }
