@@ -29,7 +29,7 @@ export default async (req, res) => {
 
     res.send(200);
   } else {
-    res.send(300);
+    res.send(301);
   }
 
 };

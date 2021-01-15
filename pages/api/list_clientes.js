@@ -1,7 +1,8 @@
 import { connectToDatabase } from "../../util/mongodb";
 
 export default async (req, res) => {
-  const { db } = await connectToDatabase();
+  try {
+    const { db } = await connectToDatabase();
 
   const clientes = await db
     .collection("clientes")
@@ -11,4 +12,9 @@ export default async (req, res) => {
     .toArray();
 
   res.json(clientes);
+  } catch (error) {
+    res.send(301)
+  }
+  
+  
 };

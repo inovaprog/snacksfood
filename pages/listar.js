@@ -16,14 +16,22 @@ function Main({ clientes }) {
 
 export async function getStaticProps() {
 
-    const res = await fetch('https://snacksfood.vercel.app/api/list_clientes')
-    const clientes = await res.json()
-    
-    return {
-        props: {
-            clientes,
-        },
+    try {
+        const res = await fetch('https://snacksfood.vercel.app/api/list_clientes')
+        const clientes = await res.json()
+        return {
+            props: {
+                clientes,
+            },
+        }
+    } catch (error) {
+        return (<div>
+            <h2>Ouve Um Erro. Tente Novamente!</h2>
+            <a href="/">    VOLTAR</a>
+        </div>)
     }
+
+ 
 }
 
 export default Main
