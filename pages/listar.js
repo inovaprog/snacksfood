@@ -1,4 +1,5 @@
 function Main({ clientes }) {
+    
     console.log("CONSULTA TERMINADA OK")
     
     return (
@@ -16,7 +17,7 @@ function Main({ clientes }) {
     )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
    
         const res = await fetch('https://snacksfood.vercel.app/api/list_clientes')
