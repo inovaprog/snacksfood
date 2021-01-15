@@ -26,7 +26,8 @@ function Main({ clientes }) {
     const mystyle = {
         backgroundColor: "#6E2D2C",
         padding: "20px",
-        height: "100%"
+        height: "100%",
+        margin: 0
     };
 
     return (
