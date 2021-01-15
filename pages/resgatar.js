@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Router from 'next/router'
 function BotaoVoltar() {
     const estilo = {
         width: "100%",
@@ -40,6 +41,8 @@ class NameForm extends React.Component {
             .then(function (response) {
 
                 console.log(response);
+                Router.push('../')
+
             });
         event.preventDefault();
     }
@@ -62,11 +65,12 @@ class NameForm extends React.Component {
                         height={500}
                         marginBotton={30}
                     />
+                    <center><h2>Resgatar pontos do cliente</h2></center>
                     <form onSubmit={this.handleSubmit}>
                         <label for="nome">Telefone:</label><br></br>
-                        <input style={{ width: "100%" }} type="text" value={this.state.telefone} onChange={this.handleChangeTelefone}></input><br></br><br></br>
+                        <input style={{ width: "100%" }} type="number" value={this.state.telefone} onChange={this.handleChangeTelefone}></input><br></br><br></br>
                         <label for="telefone" >Quantidade de Pontos:</label><br></br>
-                        <input style={{ width: "100%" }} type="text" value={this.state.qtdPontos} onChange={this.handleChangeQtdPontos}></input><br></br>
+                        <input style={{ width: "100%" }} type="number" value={this.state.qtdPontos} onChange={this.handleChangeQtdPontos}></input><br></br>
                         <input  style={{ width: "100%", marginTop:"20px" }}  type="submit" value="Enviar" />
                     </form>
                     <BotaoVoltar></BotaoVoltar>
@@ -81,7 +85,7 @@ function Main({ clientes }) {
 
     return (
         <div>
-            <center><h2>Resgatar pontos do cliente</h2></center>
+            
             <NameForm></NameForm>
         </div>
     )

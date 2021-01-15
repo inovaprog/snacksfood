@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Router from 'next/router'
 function BotaoVoltar() {
     const estilo = {
         width: "100%",
@@ -39,6 +40,8 @@ class NameForm extends React.Component {
             .then(function (response) {
 
                 console.log(response);
+                Router.push('../')
+
             });
         event.preventDefault();
     }

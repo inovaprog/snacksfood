@@ -1,18 +1,49 @@
+function BotaoVoltar() {
+    const estilo = {
+        width: "100%",
+        backgroundColor: "white",
+        marginTop: "20px",
+
+    }
+
+    return (
+
+        <div style={estilo}>
+            <a href="../" style={{ textDecoration: "none" }}>Voltar</a>
+        </div>
+    )
+}
+
 function Main({ clientes }) {
-    
+    const mystyle = {
+        backgroundColor: "#6E2D2C",
+        padding: "20px",
+        height: "100%",
+        margin: 0,
+        color: "white",
+        height: "100%"
+    };
+
+    const estiloCliente = {
+        backgroundColor: "#fff",
+        color: "black",
+        paddingTop: "20px"
+    }
+
     console.log("CONSULTA TERMINADA OK")
     
     return (
-        <div>
+        <div style={mystyle}>
             <center><h2>Lista de Clientes</h2></center>
             {clientes.map((cliente) => (
-                <div className="nome">
-                    <center><p>{cliente.nome}</p></center>
-                    <center><p>{cliente.qdtPontos} Pontos</p></center>
-                    <center><p>Telefone: {cliente.telefone}</p></center>
+                <div style={estiloCliente}>
+                    <center>{cliente.nome}</center>
+                    <center style={{color: "red"}} >{cliente.qdtPontos} Pontos</center>
+                    <center>Telefone: {cliente.telefone}</center>
                     <hr />
                 </div>
             ))}
+            <center><BotaoVoltar></BotaoVoltar></center>
         </div>
     )
 }

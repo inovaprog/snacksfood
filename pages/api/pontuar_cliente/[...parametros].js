@@ -20,7 +20,7 @@ export default async (req, res) => {
 
   if (user.length == 0) {
 
-    res.send(301);
+    res.send(300);
   } else {
     
     await db.collection("clientes").updateOne(
