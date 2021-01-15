@@ -1,4 +1,6 @@
 function Main({ clientes }) {
+    console.log("CONSULTA TERMINADA OK")
+    
     return (
         <div>
             <center><h2>Lista de Clientes</h2></center>
@@ -18,6 +20,7 @@ export async function getStaticProps() {
 
    
         const res = await fetch('https://snacksfood.vercel.app/api/list_clientes')
+        console.log("BANCO OK")
         const clientes = await res.json()
         return {
             props: {
